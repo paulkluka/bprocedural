@@ -6,7 +6,7 @@ export default class BaseModelClass {
         this.customDiameter = customDiameter;
     }
 
-    async createChair(chairPosition: Vector3, chairRotation: Matrix): Promise<InstancedMesh> {
+    async createChair(chairPosition: Vector3, chairRotation: Matrix): Promise<Mesh> {
         const armRestDistance = .5;
 
         const seat = MeshBuilder.CreateBox("Box", {width: armRestDistance*2, height: .1, depth: 1});
@@ -22,7 +22,7 @@ export default class BaseModelClass {
         const chairArray = [seat, back, armRestL, armRestR];
     
         const chairMesh = Mesh.MergeMeshes(chairArray)
-        
+
 
         if (chairMesh === null) {
             console.log("it has gone wrong!")
