@@ -1,4 +1,4 @@
-import { ArcRotateCamera, Engine, HemisphericLight, Matrix, Mesh, PointLight, Scene, Vector3 } from "@babylonjs/core";
+import { ArcRotateCamera, Engine, HemisphericLight, InstancedMesh, PointLight, Scene, Vector3 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import CircularSeating from "@/components/circularRooms";
 import CreateChair from "@/components/Chair02Proc";
@@ -37,46 +37,21 @@ export class ProceduralScene{
             setupWithGrid(grid);
         });
     }
-
-    async function createChairInstances() {
-        try {
-          const baseChair = await chair.createChair(new Vector3(), new Matrix());
-          
-          return baseChair;
-        } catch (error) {
-          console.error("Error creating chair:", error);
-        }
-      }
-      
-      createChairInstances();
-
     
-    function setupWithGrid(grid: any[]) {
+    function setupWithGrid(grid: InstancedMesh[]) {
 
-        grid.forEach((element: Mesh, index: number) => {
+        grid.forEach((element: InstancedMesh) => {
             const roomPosition = new Vector3(element.position.x, .5, element.position.z); 
             const outerRadius = 4;
             const innerRadius = 2;
             const tableNumber = 2;
             const seatNumber = 5;
 
-            let modIndex = index;
-
-            if(index < 2){
-                modIndex = 2;
-            }
-            if(index > 4){
-                modIndex =  4;
-            }
-            else{modIndex = index;}
-
-
             circular.seatLocations(tableNumber, outerRadius, innerRadius, seatNumber, roomPosition).then(seatingArray => {
                 seatingArray.forEach((seat) => {
                     const chairRotation = seat.getWorldMatrix().getRotationMatrix();
                     const chairPosition = new Vector3((seat.position.x + roomPosition.x),(seat.position.y + roomPosition.y),(seat.position.z + roomPosition.z));
                     
-                    createChairInstances();
                     chair.createChair(chairPosition, chairRotation);
 
                 });

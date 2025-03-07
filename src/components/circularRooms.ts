@@ -1,26 +1,8 @@
-import {AbstractMesh, Axis, InstancedMesh, MeshBuilder, Space, TransformNode, Vector3} from "@babylonjs/core";
+import {Axis, InstancedMesh, MeshBuilder, Space, TransformNode, Vector3} from "@babylonjs/core";
 
 export default class CircularSeating {
-    /*
-    mainCount: number;
-    mainRadius: number;
-    subCount: number;
-    subRadius: number;
-    roomPosition: Vector3;
-    */
 
-    constructor( /*mainCount = 2, mainRadius = 5, subCount = 4, subRadius = 1, roomPosition = new Vector3(0,0,0)*/) {
-        /*
-        this.mainCount = mainCount;
-        this.mainRadius = mainRadius;
-        this.subCount = subCount;
-        this.subRadius = subRadius;
-        this.roomPosition = roomPosition;
-        */
-    }
-
-    
-    async gridCreator(xCount: number, zCount: number): Promise<AbstractMesh[]> {
+    async gridCreator(xCount: number, zCount: number): Promise<InstancedMesh[]> {
         const xSize = 60;
         const zSize = 60;
 

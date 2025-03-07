@@ -23,7 +23,6 @@ export default class BaseModelClass {
     
         const chairMesh = Mesh.MergeMeshes(chairArray)
 
-
         if (chairMesh === null) {
             console.log("it has gone wrong!")
             const errorMesh = seat.createInstance("errorMesh");
