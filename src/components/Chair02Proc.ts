@@ -1,4 +1,4 @@
-import { AbstractMesh, Axis, InstancedMesh, Matrix, Mesh, MeshBuilder, Quaternion, Space, TransformNode, Vector3 } from "@babylonjs/core";
+import { Axis, InstancedMesh, Matrix, Mesh, MeshBuilder, Quaternion, Space, Vector3 } from "@babylonjs/core";
 
 export default class BaseModelClass {
     customDiameter: number;
@@ -6,7 +6,7 @@ export default class BaseModelClass {
         this.customDiameter = customDiameter;
     }
 
-    async createChair(chairPosition: Vector3, chairRotation: Matrix): Promise<Mesh> {
+    async createChair(chairPosition: Vector3, chairRotation: Matrix): Promise<InstancedMesh> {
         const armRestDistance = .5;
 
         const seat = MeshBuilder.CreateBox("Box", {width: armRestDistance*2, height: .1, depth: 1});
@@ -26,14 +26,20 @@ export default class BaseModelClass {
 
         if (chairMesh === null) {
             console.log("it has gone wrong!")
-            return chairArray[0];
+            const errorMesh = seat.createInstance("errorMesh");
+            return errorMesh;
         }
+    
         chairMesh.position = chairPosition;
         chairMesh.rotationQuaternion = Quaternion.FromRotationMatrix(chairRotation);
         chairMesh.rotate(Axis.X, -Math.PI / 2, Space.LOCAL);
         chairMesh.rotate(Axis.Y, Math.PI, Space.LOCAL);
 
-        return chairMesh;
+        const chairInstance = chairMesh.createInstance('chair_instance');
+
+        return chairInstance;
+
+
     }
 }
 
