@@ -13,4 +13,4 @@ export default class BaseModelClass {
         
         return newCube;
     }
-}
+} 

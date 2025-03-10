@@ -1,6 +1,6 @@
 import { Axis, InstancedMesh, Matrix, Mesh, MeshBuilder, Quaternion, Space, Vector3 } from "@babylonjs/core";
 
-export default class BaseModelClass {
+export default class CreateChair {
     customDiameter: number;
     constructor( customDiameter = 2) {
         this.customDiameter = customDiameter;
@@ -37,9 +37,5 @@ export default class BaseModelClass {
         const chairInstance = chairMesh.createInstance('chair_instance');
 
         return chairInstance;
-
-
     }
-}
-
-
+} 

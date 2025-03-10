@@ -110,4 +110,4 @@ export default class CircularSeating {
 
         return outObjects;
     }
-}
+} 
