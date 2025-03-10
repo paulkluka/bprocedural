@@ -1,6 +1,6 @@
 import { AbstractMesh, Axis, InstancedMesh, Matrix, Mesh, MeshBuilder, Quaternion, Space, TransformNode, Vector3 } from "@babylonjs/core";
 
-export default class BaseModelClass {
+export default class Chair01Proc {
     customDiameter: number;
     constructor( customDiameter = 2) {
         this.customDiameter = customDiameter;
@@ -35,4 +35,4 @@ export default class BaseModelClass {
 
         return chairMesh;
     }
-}
+} 

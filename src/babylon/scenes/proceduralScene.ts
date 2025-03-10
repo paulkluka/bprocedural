@@ -1,7 +1,7 @@
 import { ArcRotateCamera, Engine, HemisphericLight, InstancedMesh, PointLight, Scene, Vector3 } from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
-import CircularSeating from "@/components/circularRooms";
-import CreateChair from "@/components/Chair02Proc";
+import CircularSeating from "@/babylon/components/circularRooms";
+import CreateChair from "@/babylon/components/Chair02Proc";
 
 export class ProceduralScene{
 
@@ -64,5 +64,4 @@ export class ProceduralScene{
 
     return scene;
     }
-}
-
+} 

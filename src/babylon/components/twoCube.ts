@@ -31,4 +31,4 @@ export default class TwoCube {
         return seats;
 
     }
-}
+} 
