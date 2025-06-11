@@ -54,12 +54,12 @@ export default class CircularSeating {
                 
                 const spherePosition = new Vector3(
                     mainX + subX,
-                    0,
+                    .5,
                     mainZ + subZ
                 );
                 seat.position = spherePosition;
     
-                const subCenterPosition = new Vector3(mainX, 0, mainZ);
+                const subCenterPosition = new Vector3(mainX, .5, mainZ);
                 const directionToSubCenter = subCenterPosition.subtract(spherePosition).normalize();
                 
                 const targetPoint = spherePosition.add(directionToSubCenter.scale(1));
@@ -103,6 +103,7 @@ export default class CircularSeating {
         }
 
         const root = new TransformNode(`roomTransform`);
+        
         outObjects.forEach(mesh =>{
             mesh.parent = root
         })
