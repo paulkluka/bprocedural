@@ -190,8 +190,8 @@ export default class meshTools{
         const circular = new CircularSeating;
         const chair = new CreateChair;
 
-        const gridSizeX = 2;
-        const gridSizeZ = 5;
+        const gridSizeX = 1;
+        const gridSizeZ = 3;
         const cubeSize = 1;
         
         const outerRadius = 0;

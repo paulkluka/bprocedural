@@ -7,7 +7,7 @@ export default class conferenceRooms{
 
         const pillarHeight = 6;
         const floorboardHeight = .2;
-        const pillarDiameter = .5;
+        const pillarDiameter = 1;
 
         const roomCore = MeshBuilder.CreateGround("ground", {width: roomWidth, height: roomHeight});
         roomCore.position = spawnPoint;

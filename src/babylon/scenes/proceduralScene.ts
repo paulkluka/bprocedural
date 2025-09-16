@@ -64,20 +64,20 @@ export class ProceduralScene{
     function initializeScene() {
         //min value 4 increments of 2
         //max value 20
-        const lobbyZ = 4;
+        const lobbyZ = 10;
         //min value 4 increments of 2
         //max value 20
-        const lobbyX = 16;
+        const lobbyX = 10;
         //min value 4
-        const northSouthScale = 30;
-        const eastWestScale = 50;
+        const northSouthScale = 15;
+        const eastWestScale = 25;
         //currently larger than 3 negates offices
         //this could be a ToDo
         const walkWidth = 3;
         //min 4, is awkward if less than corresponding conference width/depth
-        const northSouthLobbyWidth = 16;
+        const northSouthLobbyWidth = 15;
         const northSouthLobbyDepth = 10;
-        const eastWestLobbyWidth = 30;
+        const eastWestLobbyWidth = 15;
         const eastWestLobbyDepth = 10;
         //Should not be smaller than meeting width depth
         const conferenceWidth = 12;
@@ -87,7 +87,7 @@ export class ProceduralScene{
         //min 12 should not be larger than conference
         const meetingDepth = 12;
         //min 0 max 1 - .5 is diagonal line
-        const cornershape = 0;
+        const cornershape = 1;
         const conferenceAmount = 4;
 
         createOfficeStructure(northSouthScale,
@@ -378,7 +378,7 @@ export class ProceduralScene{
         arrayRoom.scaling.z = meetingWidth;
         arrayRoom.position = startPosition;
         const meetingDirection = new Vector3(0,0,1);
-        meshTools.arrayObjectWithRotation(arrayRoom, meetingDirection, 3, 16.5, 0);
+        meshTools.arrayObjectWithRotation(arrayRoom, meetingDirection, 2, 16.5, 0);
 
     };
 

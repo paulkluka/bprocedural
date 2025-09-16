@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="canvas-container">
     <canvas ref="canvasRef"></canvas>
   </div>
 </template>
@@ -24,12 +24,29 @@ export default defineComponent({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-canvas{
-width: 100%;
-height: 100%;
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 0;
 }
 
-</style> 
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+  z-index: inherit;
+}
+</style>

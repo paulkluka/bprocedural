@@ -1,30 +1,47 @@
 <template>
-  <v-app>
-    <v-main>
+  <v-app id="app-container">
+    <v-main class="fill-height pa-0 ma-0 overflow-hidden">
+      <UiRightbar></UiRightbar>
       <ProceduralScene />
+
     </v-main>
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import LocationClicker from './components/LocationClicker.vue';
 import ProceduralScene from './components/ProceduralScene.vue';
+//import UiRightbar from './UiElements/UiRightbar.vue';
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    ProceduralScene
-  }
-});
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
 }
-</style> 
+
+#app, #app-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.v-application {
+  min-height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.v-main {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+</style>
